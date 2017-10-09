@@ -23,7 +23,6 @@
             android:name=".Main2Activity"
             android:label="@string/title_activity_main2"
             android:theme="@style/AppTheme" />
-        <activity android:name=".Profile" />
         <activity
             android:name=".ProfileAsli"
             android:label="@string/title_activity_profile_asli"
