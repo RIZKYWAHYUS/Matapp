@@ -3,6 +3,7 @@ package com.example.user.matapp;
 /**
  * Created by user on 06/10/2017.
  */
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -69,24 +70,22 @@ public class Fragment1 extends Fragment {
         recyclerView.setLayoutManager(layoutManager);
         countries = new ArrayList<>();
         countries.add("Profile");
-        countries.add("India");
-        countries.add("United States of America");
-        countries.add("Germany");
-        countries.add("Russia");
-        countries.add("Russia");
-        countries.add("Russia");
-        countries.add("Russia");
+        countries.add("Leaderboard");
+        countries.add("Tes Ketajaman");
+        countries.add("Tes Kejelian");
+        countries.add("Tes Warna");
+        countries.add("Statistik");
+        countries.add("Yuk Donasi");
 
 
         gambar = new ArrayList<>();
         gambar.add(R.drawable.ic_profileman);
+        gambar.add(R.drawable.ic_leaderboard);
+        gambar.add(R.drawable.ic_ketajaman);
         gambar.add(R.drawable.ic_kejelian);
-        gambar.add(R.drawable.ic_donation);
-        gambar.add(R.drawable.ic_laptop);
-        gambar.add(R.drawable.ic_exit);
+        gambar.add(R.drawable.ic_warna);
         gambar.add(R.drawable.ic_statistic);
-        gambar.add(R.drawable.ic_warna);
-        gambar.add(R.drawable.ic_warna);
+        gambar.add(R.drawable.ic_donation);
 
         RecyclerView.Adapter adapter = new DataAdapter(countries, gambar);
         recyclerView.setAdapter(adapter);
@@ -105,7 +104,8 @@ public class Fragment1 extends Fragment {
                 View child = rv.findChildViewUnder(e.getX(), e.getY());
                 if(child != null && gestureDetector.onTouchEvent(e)) {
                     int position = rv.getChildAdapterPosition(child);
-                    Toast.makeText(getActivity().getApplicationContext(), (CharSequence) countries.get(position), Toast.LENGTH_SHORT).show();
+                    mulaiSubMenu(position);
+
                 }
 
                 return false;
@@ -126,9 +126,45 @@ public class Fragment1 extends Fragment {
 
 
 
+    public void mulaiSubMenu(int position){
+        Intent intent;
+        switch (position) {
+            case 0:
+                intent = new Intent(getActivity().getApplicationContext(), ProfileAsli.class);
+                startActivity(intent);
+                break;
+            case 1:
+                Toast.makeText(getActivity().getApplicationContext(), (CharSequence) countries.get(position), Toast.LENGTH_SHORT).show();
+                break;
+            case 2:
+                Toast.makeText(getActivity().getApplicationContext(), (CharSequence) countries.get(position), Toast.LENGTH_SHORT).show();
+                break;
+            case 3 :
+                Toast.makeText(getActivity().getApplicationContext(), (CharSequence) countries.get(position), Toast.LENGTH_SHORT).show();
+                break;
+            case 4 :
+                Toast.makeText(getActivity().getApplicationContext(), (CharSequence) countries.get(position), Toast.LENGTH_SHORT).show();
+                break;
+            case 5:
+                Toast.makeText(getActivity().getApplicationContext(), (CharSequence) countries.get(position), Toast.LENGTH_SHORT).show();
+                break;
+            case 6:
+                Toast.makeText(getActivity().getApplicationContext(), (CharSequence) countries.get(position), Toast.LENGTH_SHORT).show();
+                break;
+            default:
+                Toast.makeText(getActivity().getApplicationContext(), (CharSequence) countries.get(position), Toast.LENGTH_SHORT).show();
+                break;
+            }
+
+
+
+        }
 
 
 
 
+    }
 
-}
+
+
+

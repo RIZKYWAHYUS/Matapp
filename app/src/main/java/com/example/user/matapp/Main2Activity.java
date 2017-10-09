@@ -19,6 +19,8 @@ import android.widget.Toast;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+import java.util.logging.Handler;
+import java.util.logging.LogRecord;
 
 public class Main2Activity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -29,8 +31,6 @@ public class Main2Activity extends AppCompatActivity
         setContentView(R.layout.activity_main2);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-
-
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -44,18 +44,8 @@ public class Main2Activity extends AppCompatActivity
         displaySelectedScreen(R.id.item_halaman_utama);
 
 
-
-
-
-
-
-
-
-
-
-
-
     }
+
 
     @Override
     public void onBackPressed() {
@@ -65,7 +55,12 @@ public class Main2Activity extends AppCompatActivity
         } else {
             super.onBackPressed();
         }
-    }
+
+            finish(); // finish activity
+
+
+        }
+
 
 
 
@@ -109,6 +104,8 @@ public class Main2Activity extends AppCompatActivity
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
     }
+
+
 
 
 
