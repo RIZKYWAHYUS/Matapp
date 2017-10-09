@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item android:id="@+id/item_halaman_utama"
+            android:icon="@drawable/ic_home_black_24dp"
+            android:title="Halaman Utama"/>
+        <item
+            android:id="@+id/item_akun"
+            android:icon="@drawable/ic_assignment_ind_black_24dp"
+            android:title="Akun" />
+        <item
+            android:id="@+id/item_tentang"
+            android:icon="@drawable/ic_smartphone_black_24dp"
+            android:title="Tentang Kami" />
+        <item
+            android:id="@+id/item_pengaturan"
+            android:icon="@drawable/ic_settings_black_24dp"
+            android:title="Pengaturan" />
+    </group>
+
+    <item android:title="Jejaring Sosial">
+        <menu>
+            <item
+                android:id="@+id/item_bagikan"
+                android:icon="@drawable/ic_menu_share"
+                android:title="Bagikan" />
+            <item
+                android:id="@+id/item_saran"
+                android:icon="@drawable/ic_menu_send"
+                android:title="Kirim Saran" />
+        </menu>
+    </item>
+
+</menu>
