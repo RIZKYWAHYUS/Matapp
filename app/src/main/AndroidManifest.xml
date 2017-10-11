@@ -25,7 +25,7 @@
             android:theme="@style/AppTheme" />
         <activity
             android:name=".ProfileAsli"
-            android:label="@string/title_activity_profile_asli"
+            android:label="Danny Pej"
             android:parentActivityName=".Main2Activity"
             android:theme="@style/AppTheme">
             <meta-data
