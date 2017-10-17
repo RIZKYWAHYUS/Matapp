@@ -32,6 +32,30 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.example.user.matapp.Main2Activity" />
         </activity>
+        <activity
+            android:name=".Statistika"
+            android:label="Statistika"
+            android:parentActivityName=".Main2Activity"
+            android:theme="@style/AppTheme">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.user.matapp.Main2Activity" />
+        </activity>
+        <activity
+            android:name=".TesKejalian"
+            android:label="Tes Kejelian"
+            android:parentActivityName=".Main2Activity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.user.matapp.Main2Activity" />
+        </activity>
+        <activity android:name=".TesKewarnaan"
+            android:theme="@style/AppTheme"
+            android:parentActivityName=".Main2Activity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.user.matapp.Main2Activity" />
+            </activity>
     </application>
 
 </manifest>

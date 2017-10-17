@@ -140,13 +140,16 @@ public class Fragment1 extends Fragment {
                 Toast.makeText(getActivity().getApplicationContext(), (CharSequence) countries.get(position), Toast.LENGTH_SHORT).show();
                 break;
             case 3 :
-                Toast.makeText(getActivity().getApplicationContext(), (CharSequence) countries.get(position), Toast.LENGTH_SHORT).show();
+                intent = new Intent(getActivity().getApplicationContext(), TesKejalian.class);
+                startActivity(intent);
                 break;
             case 4 :
-                Toast.makeText(getActivity().getApplicationContext(), (CharSequence) countries.get(position), Toast.LENGTH_SHORT).show();
+                intent = new Intent(getActivity().getApplicationContext(), TesKewarnaan.class);
+                startActivity(intent);
                 break;
             case 5:
-                Toast.makeText(getActivity().getApplicationContext(), (CharSequence) countries.get(position), Toast.LENGTH_SHORT).show();
+                intent = new Intent(getActivity().getApplicationContext(), Statistika.class);
+                startActivity(intent);
                 break;
             case 6:
                 Toast.makeText(getActivity().getApplicationContext(), (CharSequence) countries.get(position), Toast.LENGTH_SHORT).show();
