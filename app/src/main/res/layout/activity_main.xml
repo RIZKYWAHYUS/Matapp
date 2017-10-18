@@ -18,7 +18,7 @@
         app:layout_constraintRight_toRightOf="parent"
         android:foregroundGravity="center"
         app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginTop="143dp" />
+        android:layout_marginTop="20dp" />
 
     <EditText
         android:id="@+id/et_username"
@@ -43,7 +43,7 @@
         android:layout_height="wrap_content"
         android:ems="10"
         android:inputType="textPassword"
-        android:hint="password"
+        android:hint="Password"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         android:layout_marginTop="13dp"
@@ -65,7 +65,21 @@
         android:textColor="@android:color/white"
         app:layout_constraintTop_toBottomOf="@+id/et_password"
         android:onClick="aksiMasuk"
+
         />
 
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="260dp"
+        android:layout_height="wrap_content"
+        android:text="Don't have an account?"
+        android:textAllCaps="false"
+        android:gravity="center"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginTop="15dp"
+        android:onClick="aksiDaftar"
+        app:layout_constraintTop_toBottomOf="@+id/button"
+        />
 
 </android.support.constraint.ConstraintLayout>

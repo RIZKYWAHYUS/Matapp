@@ -25,4 +25,10 @@ public class MainActivity extends AppCompatActivity {
 
         startActivity(intent);
     }
+
+
+    public void aksiDaftar(View v){
+        Intent intent = new Intent(MainActivity.this, DaftarActivity.class);
+        startActivity(intent);
+    }
 }

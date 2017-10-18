@@ -137,7 +137,8 @@ public class Fragment1 extends Fragment {
                 Toast.makeText(getActivity().getApplicationContext(), (CharSequence) countries.get(position), Toast.LENGTH_SHORT).show();
                 break;
             case 2:
-                Toast.makeText(getActivity().getApplicationContext(), (CharSequence) countries.get(position), Toast.LENGTH_SHORT).show();
+                intent = new Intent(getActivity().getApplicationContext(), tesKetajaman.class);
+                startActivity(intent);
                 break;
             case 3 :
                 intent = new Intent(getActivity().getApplicationContext(), TesKejalian.class);
@@ -152,7 +153,8 @@ public class Fragment1 extends Fragment {
                 startActivity(intent);
                 break;
             case 6:
-                Toast.makeText(getActivity().getApplicationContext(), (CharSequence) countries.get(position), Toast.LENGTH_SHORT).show();
+                intent = new Intent(getActivity().getApplicationContext(), Donasi.class);
+                startActivity(intent);
                 break;
             default:
                 Toast.makeText(getActivity().getApplicationContext(), (CharSequence) countries.get(position), Toast.LENGTH_SHORT).show();
