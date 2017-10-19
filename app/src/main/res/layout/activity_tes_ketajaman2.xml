@@ -19,32 +19,41 @@ tools:context="com.example.user.matapp.tes_ketajaman2">
     app:popupTheme="@style/AppTheme.PopupOverlay"
     />
 
-<ScrollView
-    android:layout_width="match_parent"
-    android:layout_height="200dp"
-
-    >
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="3"
-        android:textSize="10dp"
-        android:layout_gravity="center"
-
+        android:text="Lihat dengan jarak pandang ke layar 30cm"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="10dp"
         />
-</ScrollView>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+
+        >
+
+        <TextView
+            android:id="@+id/soalKetajaman"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="3"
+            android:textSize="10dp" />
+    </ScrollView>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:layout_margin="@dimen/activity_horizontal_margin"
-
+        android:layout_gravity="bottom|end"
+        android:gravity="bottom|end"
         android:weightSum="1">
         <EditText
             android:layout_width="59dp"
             android:layout_height="wrap_content"
-            android:id="@+id/et_username"
+            android:id="@+id/et_jawaban"
             android:layout_alignTop="@+id/button"
             android:layout_alignParentStart="true"
             android:layout_toStartOf="@+id/button"
@@ -55,7 +64,7 @@ tools:context="com.example.user.matapp.tes_ketajaman2">
         <Button
             android:layout_width="52dp"
             android:layout_height="wrap_content"
-            android:id="@+id/button"
+            android:id="@+id/buttonOK"
             style="?android:attr/borderlessButtonStyle"
             android:text="OK"
             android:background="@color/waranku"

@@ -1,5 +1,6 @@
 package com.example.user.matapp;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -15,6 +16,16 @@ public class ProfileAsli extends AppCompatActivity {
         setContentView(R.layout.activity_profile_asli);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+        Intent i = getIntent();
+        Bundle b = i.getExtras();
+        if(b!=null){
+            String nama = (String) b.get("namaUser");
+            if(!nama.trim().equalsIgnoreCase("")){
+                this.setTitle(nama);
+            }
+        }
+
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {

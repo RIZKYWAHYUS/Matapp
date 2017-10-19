@@ -1,6 +1,7 @@
 package com.example.user.matapp;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
@@ -27,6 +28,7 @@ import java.util.logging.LogRecord;
 
 public class Main2Activity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
+    String nama = "Matappers";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,6 +38,7 @@ public class Main2Activity extends AppCompatActivity
         setSupportActionBar(toolbar);
 
 
+
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
@@ -43,6 +46,20 @@ public class Main2Activity extends AppCompatActivity
         toggle.syncState();
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
+        View headerView = navigationView.getHeaderView(0);
+        TextView navUsername = (TextView) headerView.findViewById(R.id.Namadidrawer);
+        TextView navEmail = (TextView) headerView.findViewById(R.id.Emaildidrawer);
+
+        Intent i = getIntent();
+        Bundle b = i.getExtras();
+        if(b!=null){
+            nama = (String) b.get("namaUser");
+            if(!nama.trim().equalsIgnoreCase("")){
+                navUsername.setText(nama);
+                navEmail.setText(nama.toLowerCase().trim()+"@mail.com");
+            }
+        }
+
         navigationView.setNavigationItemSelectedListener(this);
 
         displaySelectedScreen(R.id.item_halaman_utama);
@@ -94,6 +111,22 @@ public class Main2Activity extends AppCompatActivity
                 break;
             case R.id.item_pengaturan:
                 break;
+            case R.id.item_bagikan:
+                Intent sendIntent = new Intent();
+                sendIntent.setAction(Intent.ACTION_SEND);
+                sendIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                sendIntent.putExtra(Intent.EXTRA_TEXT, "Hey Kamu! aku udah nggunain Matapp lo! Ayo ikut menjaga kesehatan mata menggunakan aplikasi Matapp! \n\nRegards, "+this.nama);
+                sendIntent.setType("text/plain");
+                startActivity(Intent.createChooser(sendIntent, "Ayo ajak teman-temanmu !"));
+                break;
+            case R.id.item_saran:
+                Intent emailIntent = new Intent(Intent.ACTION_SENDTO);
+                emailIntent.setData(Uri.parse("mailto: matappbcc@gmail.com"));
+                emailIntent.putExtra(android.content.Intent.EXTRA_SUBJECT, "SARAN UNTUK MATAPP - "+this.nama);
+                startActivity(Intent.createChooser(emailIntent, "Kami mengharapkan saranmu.."));
+
+                break;
+
         }
 
         //replacing the fragment

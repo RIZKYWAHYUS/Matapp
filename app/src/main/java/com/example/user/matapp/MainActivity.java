@@ -20,7 +20,7 @@ public class MainActivity extends AppCompatActivity {
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
         intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
 
-        EditText et_nama = (EditText) findViewById(R.id.et_username);
+        EditText et_nama = (EditText) findViewById(R.id.et_jawaban);
         intent.putExtra("namaUser", et_nama.getText().toString());
 
         startActivity(intent);

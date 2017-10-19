@@ -19,6 +19,7 @@ import android.widget.ListView;
 import android.widget.SimpleAdapter;
 import android.widget.Toast;
 
+import java.nio.BufferUnderflowException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -30,7 +31,7 @@ import java.util.List;
 
 public class Fragment1 extends Fragment {
 
-
+    public static String nama="";
 
 
     @Nullable
@@ -39,6 +40,12 @@ public class Fragment1 extends Fragment {
         //returning our layout file
         //change R.layout.yourlayoutfilename for each of your fragments
         View view = inflater.inflate(R.layout.fragment_1, container, false);
+
+        Intent i = getActivity().getIntent();
+        Bundle b = i.getExtras();
+        if(b!=null){
+            nama = (String) b.get("namaUser");
+        }
 
         initViews(view);
 
@@ -131,6 +138,7 @@ public class Fragment1 extends Fragment {
         switch (position) {
             case 0:
                 intent = new Intent(getActivity().getApplicationContext(), ProfileAsli.class);
+                intent.putExtra("namaUser", nama);
                 startActivity(intent);
                 break;
             case 1:
