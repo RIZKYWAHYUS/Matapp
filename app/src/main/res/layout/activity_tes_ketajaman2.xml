@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+android:orientation="vertical"
+tools:context="com.example.user.matapp.tes_ketajaman2">
+
+<android.support.v7.widget.Toolbar
+    android:id="@+id/toolbar"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:layout_collapseMode="pin"
+    android:background="?attr/colorPrimary"
+    app:titleTextColor="#FFFFFF"
+    android:elevation="8dp"
+    android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+    app:popupTheme="@style/AppTheme.PopupOverlay"
+    />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Lihat dengan jarak pandang ke layar 30cm"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="10dp"
+        />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="157dp"
+        android:id="@+id/scrollView"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:layout_weight="1.04">
+        >
+
+        <TextView
+            android:id="@+id/soalKetajaman"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="3"
+            android:textSize="10dp" />
+    </ScrollView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_margin="@dimen/activity_horizontal_margin"
+        android:layout_gravity="bottom|end"
+        android:gravity="bottom|end"
+        android:weightSum="1">
+        <EditText
+            android:layout_width="59dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/et_jawaban"
+            android:layout_alignTop="@+id/button"
+            android:layout_alignParentStart="true"
+            android:layout_toStartOf="@+id/button"
+            android:hint="Coba tebak angka berapa?"
+            android:inputType="number"
+            android:layout_weight="1.02" />
+
+        <Button
+            android:layout_width="52dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/buttonOK"
+            style="?android:attr/borderlessButtonStyle"
+            android:text="OK"
+            android:background="@color/waranku"
+            android:textColor="@color/putih"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentEnd="true" />
+
+    </LinearLayout>
+</LinearLayout>

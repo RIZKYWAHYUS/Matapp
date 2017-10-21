@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/card"
+    android:layout_marginTop="4dp"
+    android:layout_marginLeft="5dp"
+    android:layout_marginRight="5dp"
+    >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="12dp">
+
+        <ImageView
+            android:id="@+id/gambarIcon"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:layout_centerVertical="true"
+            android:src="@drawable/y" />
+
+        <TextView
+            android:id="@+id/no"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="1"
+            android:textStyle="bold"
+            android:textColor="#000"
+            android:textSize="19dp" />
+
+        <TextView
+            android:id="@+id/teksMenu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="25dp"
+            android:layout_toRightOf="@id/gambarIcon"
+            android:text="Menu 1"
+
+            android:textSize="20dp"/>
+
+
+        <ImageView
+            android:id="@+id/certificate"
+            android:layout_width="25dp"
+            android:layout_height="20dp"
+            android:layout_alignStart="@id/teksMenu"
+            android:layout_below="@id/teksMenu"
+            android:layout_marginTop="4dp"
+            android:layout_toEndOf="@id/gambarIcon"
+            android:src="@drawable/diploma" />
+
+        <TextView
+            android:id="@+id/label_certificate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/teksMenu"
+            android:layout_marginLeft="3dp"
+            android:layout_marginTop="4dp"
+            android:layout_toRightOf="@id/certificate"
+            android:text="5"
+            android:textSize="15dp" />
+
+        <ImageView
+            android:id="@+id/medal"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_below="@id/teksMenu"
+            android:layout_marginTop="4dp"
+            android:layout_marginLeft="20dp"
+            android:layout_toRightOf="@id/label_certificate"
+            android:src="@drawable/medal" />
+
+        <TextView
+            android:id="@+id/label_medal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/teksMenu"
+            android:layout_marginLeft="3dp"
+            android:layout_marginTop="4dp"
+            android:layout_toRightOf="@id/medal"
+            android:text="5"
+            android:textSize="15dp" />
+
+        <ImageView
+            android:id="@+id/coins"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_below="@id/teksMenu"
+            android:layout_marginTop="4dp"
+            android:layout_marginLeft="20dp"
+            android:layout_toRightOf="@id/label_medal"
+            android:src="@drawable/coins"  />
+
+        <TextView
+            android:id="@+id/label_coin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/teksMenu"
+            android:layout_marginLeft="3dp"
+            android:layout_marginTop="4dp"
+            android:layout_toRightOf="@id/coins"
+            android:text="5"
+            android:textSize="15dp" />
+
+    </RelativeLayout>
+
+</android.support.v7.widget.CardView>
