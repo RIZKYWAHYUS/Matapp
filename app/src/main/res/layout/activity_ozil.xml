@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.example.user.matapp.Ozil">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_collapseMode="pin"
+        android:background="?attr/colorPrimary"
+        app:titleTextColor="#FFFFFF"
+        android:elevation="8dp"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        app:popupTheme="@style/AppTheme.PopupOverlay"
+        />
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="320dp"
+        android:src="@drawable/ozil"
+        />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Mesut Ozil"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:textSize="25dp"
+        android:layout_marginTop="15dp"
+        />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="21 Tahun"
+        android:gravity="center"
+        android:textSize="15dp"
+        />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Laki-laki"
+        android:gravity="center"
+        android:textSize="15dp"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="mesutozil@gmail.com"
+        android:gravity="center"
+        android:textSize="15dp"
+        />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="FB : Mesut Ozil     Line : MOzil"
+        android:gravity="center"
+        android:textSize="15dp"
+        />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="10dp">
+
+        <ImageView
+            android:layout_width="63dp"
+            android:layout_height="50dp"
+            android:src="@drawable/diploma"
+            android:layout_gravity="center"
+            android:layout_marginLeft="15dp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="1"
+            android:textSize="25sp"
+            android:layout_marginTop="8dp"
+            android:layout_marginLeft="5dp"
+            />
+
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/medal"
+            android:layout_gravity="center"
+            android:layout_marginLeft="30dp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="3"
+            android:textSize="25sp"
+            android:layout_marginTop="8dp"
+            android:layout_marginLeft="5dp"/>
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/coins"
+            android:layout_gravity="center"
+            android:layout_marginLeft="30dp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="5000"
+            android:textSize="25sp"
+            android:layout_marginTop="8dp"
+            android:layout_marginLeft="5dp"/>
+
+    </LinearLayout>
+
+
+
+</LinearLayout>

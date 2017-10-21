@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/card"
+    android:paddingLeft="5dp"
+    >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Menu 1"
+            android:layout_marginLeft="25dp"
+            android:layout_marginTop="15dp"
+            android:id="@+id/teksMenu"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Menu 2"
+            android:layout_marginLeft="25dp"
+            android:id="@+id/teksMenu2"
+            android:textColor="@color/colorPrimaryDark"
+            android:layout_below="@+id/teksMenu"
+            android:layout_marginTop="8dp"
+            />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#EDD"
+            android:layout_below="@+id/teksMenu2"
+            android:layout_marginTop="15dp"/>
+
+
+    </RelativeLayout>
+
+</LinearLayout>

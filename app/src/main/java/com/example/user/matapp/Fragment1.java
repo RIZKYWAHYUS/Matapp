@@ -142,7 +142,8 @@ public class Fragment1 extends Fragment {
                 startActivity(intent);
                 break;
             case 1:
-                Toast.makeText(getActivity().getApplicationContext(), (CharSequence) countries.get(position), Toast.LENGTH_SHORT).show();
+                intent = new Intent(getActivity().getApplicationContext(), LeaderboardAsli.class);
+                startActivity(intent);
                 break;
             case 2:
                 intent = new Intent(getActivity().getApplicationContext(), tesKetajaman.class);

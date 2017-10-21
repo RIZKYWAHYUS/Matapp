@@ -60,13 +60,18 @@
         <activity android:name=".DaftarActivity" />
         <activity android:name=".tesKetajaman" />
         <activity android:name=".tes_ketajaman2" />
-        <activity android:name=".Donasi"
+        <activity
+            android:name=".Donasi"
             android:parentActivityName=".Main2Activity"
             android:theme="@style/AppTheme">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.example.user.matapp.Main2Activity" />
         </activity>
+        <activity android:name=".LeaderboardAsli"></activity>
+        <activity
+            android:name=".Ozil"
+            android:label="Mesut Ozil"></activity>
     </application>
 
 </manifest>
