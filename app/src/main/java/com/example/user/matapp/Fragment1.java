@@ -158,7 +158,7 @@ public class Fragment1 extends Fragment {
                 startActivity(intent);
                 break;
             case 5:
-                intent = new Intent(getActivity().getApplicationContext(), Statistika.class);
+                intent = new Intent(getActivity().getApplicationContext(), NyobaTimer.class);
                 startActivity(intent);
                 break;
             case 6:
