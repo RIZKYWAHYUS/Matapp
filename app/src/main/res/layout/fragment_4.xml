@@ -20,7 +20,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Notifikasi Jarak"
-        android:padding="35dp"/>
+        android:padding="35dp"
+        android:onClick="onShowMiddlePoint"/>
+
 
     <Switch
         android:id="@+id/switch2"
