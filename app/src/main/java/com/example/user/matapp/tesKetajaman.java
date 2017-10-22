@@ -29,7 +29,7 @@ public class tesKetajaman extends AppCompatActivity implements View.OnClickListe
     @Override
     public void onClick(View v) {
         if (v == _start){
-            Intent intent = new Intent(tesKetajaman.this,tes_ketajaman2.class);
+            Intent intent = new Intent(getApplicationContext(), MainActivity_jarak.class);
             startActivity(intent);
         }
     }

@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+tools:context="com.example.user.matapp.MainActivity_jarak">
+
+  <android.support.v7.widget.Toolbar
+      android:id="@+id/toolbar"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:background="?attr/colorPrimary"
+      android:titleTextColor="#FFFFFF"
+      android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+      android:popupTheme="@style/AppTheme.PopupOverlay"
+      />
+
+<!-- Height + width will be set in the main activity -->
+<com.example.user.matapp.CameraSurfaceView
+  android:id="@+id/surface_camera"
+  android:layout_height="0dip"
+  android:layout_width="0dip"
+  android:layout_marginTop="100dip"
+  android:layout_centerHorizontal="true" />
+
+<TextView
+  android:id="@+id/currentDistance"
+  android:layout_width="fill_parent"
+  android:layout_height="wrap_content"
+  android:layout_centerHorizontal="true"
+  android:layout_alignParentTop="true"
+  android:gravity="center_horizontal"
+    android:layout_marginTop="65dp"
+  android:text="@string/currentDistance"/>
+
+<Button
+  android:id="@+id/calibrateButton"
+  android:layout_width="wrap_content"
+  android:layout_height="wrap_content"
+  android:layout_alignParentBottom="true"
+  android:layout_alignParentRight="true"
+  android:onClick="pressedCalibrate"
+  android:text="@string/calibrate"
+  android:background="@drawable/red_button" />
+
+<Button
+  android:id="@+id/resetButton"
+  android:layout_width="wrap_content"
+  android:layout_height="wrap_content"
+  android:layout_alignParentBottom="true"
+  android:layout_alignParentLeft="true"
+  android:onClick="pressedReset"
+  android:text="@string/reset" />
+
+<LinearLayout
+  android:layout_width="wrap_content"
+  android:layout_height="wrap_content"
+  android:orientation="vertical"
+  android:layout_below="@+id/surface_camera"
+  android:layout_alignParentBottom="true"
+  android:layout_centerHorizontal="true">
+
+  <Switch
+    android:id="@+id/switch1"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_gravity="right"
+    android:text="@string/showMiddlePoint"
+    android:checked="true"
+    android:onClick="onShowMiddlePoint" />
+
+  <Switch
+    android:id="@+id/switch2"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_gravity="right"
+    android:text="@string/showEyePoints"
+    android:checked="true"
+    android:onClick="onShowEyePoints" />
+
+</LinearLayout>
+
+</RelativeLayout>
+
