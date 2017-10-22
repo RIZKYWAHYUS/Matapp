@@ -150,11 +150,11 @@ public class Fragment1 extends Fragment {
                 startActivity(intent);
                 break;
             case 3 :
-                intent = new Intent(getActivity().getApplicationContext(), TesKejalian.class);
+                intent = new Intent(getActivity().getApplicationContext(), tes_kejelian2.class);
                 startActivity(intent);
                 break;
             case 4 :
-                intent = new Intent(getActivity().getApplicationContext(), TesKewarnaan.class);
+                intent = new Intent(getActivity().getApplicationContext(), tes_kewarnaan2.class);
                 startActivity(intent);
                 break;
             case 5:

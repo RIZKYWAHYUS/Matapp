@@ -29,8 +29,11 @@ tools:context="com.example.user.matapp.tes_ketajaman2">
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="200dp"
-
+        android:layout_height="157dp"
+        android:id="@+id/scrollView"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:layout_weight="1.04">
         >
 
         <TextView

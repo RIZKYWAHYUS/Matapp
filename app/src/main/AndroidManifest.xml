@@ -51,6 +51,7 @@
         </activity>
         <activity
             android:name=".TesKewarnaan"
+            android:label="Tes Kewarnaan"
             android:parentActivityName=".Main2Activity"
             android:theme="@style/AppTheme">
             <meta-data
@@ -58,10 +59,12 @@
                 android:value="com.example.user.matapp.Main2Activity" />
         </activity>
         <activity android:name=".DaftarActivity" />
-        <activity android:name=".tesKetajaman" />
-        <activity android:name=".tes_ketajaman2" />
+        <activity android:name=".tesKetajaman"/>
+        <activity android:name=".tes_ketajaman2"
+            android:label="Tes Ketajaman"/>
         <activity
             android:name=".Donasi"
+            android:label="Donasi"
             android:parentActivityName=".Main2Activity"
             android:theme="@style/AppTheme">
             <meta-data
@@ -72,7 +75,9 @@
         <activity
             android:name=".Ozil"
             android:label="Mesut Ozil" />
-        <activity android:name=".NyobaTimer"></activity>
+        <activity android:name=".NyobaTimer" />
+        <activity android:name=".tes_kejelian2" />
+        <activity android:name=".tes_kewarnaan2"></activity>
     </application>
 
 </manifest>
