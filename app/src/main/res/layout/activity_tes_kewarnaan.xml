@@ -53,7 +53,7 @@
         <EditText
             android:layout_width="59dp"
             android:layout_height="wrap_content"
-            android:id="@+id/et_jawaban"
+            android:id="@+id/et_fullname"
             android:layout_alignTop="@+id/button"
             android:layout_alignParentStart="true"
             android:layout_toStartOf="@+id/button"

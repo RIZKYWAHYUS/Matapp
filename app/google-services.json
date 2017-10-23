@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "735484350109",
+    "firebase_url": "https://matapp-1f170.firebaseio.com",
+    "project_id": "matapp-1f170",
+    "storage_bucket": "matapp-1f170.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:735484350109:android:5f4372291270a4e7",
+        "android_client_info": {
+          "package_name": "com.example.user.matapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "735484350109-80ahifes13trp9git9agorn41su31gug.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.user.matapp",
+            "certificate_hash": "b61affea172e1b4eba0a15cbdfb47f168b4b48c7"
+          }
+        },
+        {
+          "client_id": "735484350109-febohuf23mura2kachibct2su4j6qf8f.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB0hOmQOA-Fi5Ez1tVnTO_6X5yMzaz7_IM"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "735484350109-febohuf23mura2kachibct2su4j6qf8f.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

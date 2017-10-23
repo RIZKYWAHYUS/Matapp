@@ -1,7 +1,9 @@
 package com.example.user.matapp;
 
+import android.app.AlertDialog;
 import android.app.Service;
 import android.content.BroadcastReceiver;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.os.Binder;
@@ -9,6 +11,9 @@ import android.os.IBinder;
 import android.os.Message;
 import android.os.SystemClock;
 import android.util.Log;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.widget.Toast;
 
 public class MyService extends Service {
 
@@ -20,20 +25,27 @@ public class MyService extends Service {
     private long updatedTime = 0;
     private final IBinder mBinder = new LocalBinder();
     private Message timeMsg;
-
+    String waktu="";
     public MyService() { }
+
+
 
     public Runnable updateTimer = new Runnable() {
         public void run() {
             timeInMilliseconds = SystemClock.uptimeMillis() - startTime;
             updatedTime = timeSwapBuff + timeInMilliseconds;
-            Log.d("Czas:", String.valueOf(updatedTime));
+            waktu = String.valueOf(updatedTime);
+            Log.d("Czas:", waktu);
 
             timeMsg = new Message();
             timeMsg.obj = updatedTime;
-            NyobaTimer.sHandler.sendMessage(timeMsg);
+            if (waktu.equals("20000")){
 
-            NyobaTimer.sHandler.postDelayed(this, 10);
+            }
+            Statistika.sHandler.sendMessage(timeMsg);
+
+            Statistika.sHandler.postDelayed(this, 10);
+
         }
     };
 
@@ -42,25 +54,9 @@ public class MyService extends Service {
         super.onCreate();
 
 
-        IntentFilter filter = new IntentFilter(Intent.ACTION_SCREEN_ON);
-        filter.addAction(Intent.ACTION_SCREEN_OFF);
-        BroadcastReceiver mReceiver = new ScreenReceiver();
-        registerReceiver(mReceiver, filter);
 
     }
 
-    @Override
-    public void onStart(Intent intent, int startId) {
-        boolean screenOn = intent.getBooleanExtra("screen_state", false);
-        if (!screenOn) {
-            reset();
-            Log.d("STATUS:", "melalui MyService onStart if");
-
-        } else {
-            Log.d("STATUS:", "melalui MyService onStart else");
-            startStop();
-        }
-    }
 
 
 
@@ -70,12 +66,18 @@ public class MyService extends Service {
         return mBinder;
     }
 
+    public void startStopTanpaTombol(){
+            startTime = SystemClock.uptimeMillis();
+            updateTimer.run();
+//            MainActivity.sHandler.postDelayed(updateTimer, 10);
+            isRunning = true;
+    }
 
     public void startStop(){
 
-        if (false) {
+        if (isRunning) {
             timeSwapBuff += timeInMilliseconds;
-            NyobaTimer.sHandler.removeCallbacks(updateTimer);
+            Statistika.sHandler.removeCallbacks(updateTimer);
             isRunning = false;
         } else {
             startTime = SystemClock.uptimeMillis();
@@ -88,7 +90,7 @@ public class MyService extends Service {
 
     public void reset(){
 
-        NyobaTimer.sHandler.removeCallbacks(updateTimer);
+        Statistika.sHandler.removeCallbacks(updateTimer);
         isRunning=false;
         startTime = 0L;
         timeInMilliseconds = 0L;
@@ -97,7 +99,7 @@ public class MyService extends Service {
 
         timeMsg = new Message();
         timeMsg.obj = updatedTime;
-        NyobaTimer.sHandler.sendMessage(timeMsg);
+        Statistika.sHandler.sendMessage(timeMsg);
 
     }
 
