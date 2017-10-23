@@ -25,7 +25,7 @@
         android:layout_width="260dp"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:inputType="textPersonName"
+        android:inputType="textEmailAddress"
         android:hint="Email"
 
         app:layout_constraintBottom_toBottomOf="parent"
@@ -72,7 +72,7 @@
         android:id="@+id/textView"
         android:layout_width="260dp"
         android:layout_height="wrap_content"
-        android:text="Don't have an account?"
+        android:text="Belum punya akun? Daftar Disini"
         android:textAllCaps="false"
         android:gravity="center"
         app:layout_constraintLeft_toLeftOf="parent"

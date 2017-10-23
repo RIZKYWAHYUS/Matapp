@@ -1,14 +1,36 @@
 package com.example.user.matapp;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.TextView;
+import android.widget.Toast;
+
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 public class ProfileAsli extends AppCompatActivity {
+
+    private static final String TAG = "di ProfileAsli ";
+
+    private DatabaseReference mFirebaseDatabase;
+    private FirebaseDatabase mFirebaseInstance;
+
+    String namaLu="";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -17,17 +39,12 @@ public class ProfileAsli extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        Intent i = getIntent();
-        Bundle b = i.getExtras();
-        if(b!=null){
-            String nama = (String) b.get("namaUser");
-            if(!nama.trim().equalsIgnoreCase("")){
-                this.setTitle(nama);
-            }
-        }
+
+        this.setTitle(PengendaliAuth.nama);
 
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+
+        FloatingActionButton fab = (FloatingActionButton) findViewById( R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -37,4 +54,14 @@ public class ProfileAsli extends AppCompatActivity {
         });
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
+
+
+    @Override
+    public void onStart() {
+        super.onStart();
+        PengendaliAuth.mAuth.addAuthStateListener(PengendaliAuth.mAuthListener);
+    }
+
+
+
 }

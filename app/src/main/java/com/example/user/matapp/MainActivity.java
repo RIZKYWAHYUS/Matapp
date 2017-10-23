@@ -1,5 +1,6 @@
 package com.example.user.matapp;
 
+import android.content.Context;
 import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
@@ -14,6 +15,11 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -23,13 +29,23 @@ public class MainActivity extends AppCompatActivity {
 
 
 
+    private DatabaseReference mFirebaseDatabase;
+    private FirebaseDatabase mFirebaseInstance;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        mAuth = FirebaseAuth.getInstance();
-        mAuthListener = new FirebaseAuth.AuthStateListener() {
+        mFirebaseInstance = FirebaseDatabase.getInstance();
+
+        // get reference to 'users' node
+        mFirebaseDatabase = mFirebaseInstance.getReference("users");
+
+
+        PengendaliAuth.mAuth = FirebaseAuth.getInstance();
+        PengendaliAuth.mAuthListener = new FirebaseAuth.AuthStateListener() {
 
 
             @Override
@@ -37,6 +53,7 @@ public class MainActivity extends AppCompatActivity {
                 FirebaseUser user = firebaseAuth.getCurrentUser();
                 if (user != null) {
                     // User is signed in
+                    PengendaliAuth.userId = user.getUid();
                     Log.d(TAG, "onAuthStateChanged:signed_in:" + user.getUid());
                 } else {
                     // User is signed out
@@ -51,16 +68,16 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public void onStart() {
         super.onStart();
-        mAuth.addAuthStateListener(mAuthListener);
+        PengendaliAuth.mAuth.addAuthStateListener(PengendaliAuth.mAuthListener);
     }
 
-    @Override
-    public void onStop() {
-        super.onStop();
-        if (mAuthListener != null) {
-            mAuth.removeAuthStateListener(mAuthListener);
-        }
-    }
+//    @Override
+//    public void onStop() {
+//        super.onStop();
+//        if (mAuthListener != null) {
+//            mAuth.removeAuthStateListener(mAuthListener);
+//        }
+//    }
 
     private void signIn(String email, String password) {
         Log.d(TAG, "signIn:" + email);
@@ -68,14 +85,16 @@ public class MainActivity extends AppCompatActivity {
 
 
         // [START sign_in_with_email]
-        mAuth.signInWithEmailAndPassword(email, password)
+        PengendaliAuth.mAuth.signInWithEmailAndPassword(email, password)
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
                             // Sign in success, update UI with the signed-in user's information
                             Log.d(TAG, "signInWithEmail:success");
-                            FirebaseUser user = mAuth.getCurrentUser();
+                            FirebaseUser user =PengendaliAuth.mAuth.getCurrentUser();
+
+                            addUserChangeListener(user.getUid());
 
                             Intent intent = new Intent(getApplicationContext(), Main2Activity.class);
                             intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
@@ -136,4 +155,46 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(MainActivity.this, DaftarActivity.class);
         startActivity(intent);
     }
+
+
+    private void addUserChangeListener(final String uid) {
+        // User data change listener
+
+        mFirebaseDatabase.child(uid).addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                User user = dataSnapshot.getValue(User.class);
+
+                // Check for null
+                if (user == null) {
+                    Log.e(TAG, "User data is null!");
+                    return;
+                }else if(uid == null){
+                    Log.e(TAG, "User id is null!");
+                    return;
+                }
+                PengendaliAuth.nama = user.nama;
+                PengendaliAuth.email = user.email;
+                PengendaliAuth.jenisKelamin = user.jenisKelamin;
+                PengendaliAuth.noTelp = user.nomorTelp;
+                PengendaliAuth.umur = user.umur;
+
+
+
+
+
+
+
+            }
+
+            @Override
+            public void onCancelled(DatabaseError error) {
+                // Failed to read value
+                Log.e(TAG, "Failed to read user", error.toException());
+            }
+        });
+    }
+
+
+
 }
