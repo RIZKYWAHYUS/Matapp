@@ -22,13 +22,13 @@ olahraga mata dulu yok! Coba kamu liat benda sejauh 6 meter "
         android:textAlignment="center"
         />
 
-    <!--<LinearLayout-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="80dp"-->
-        <!--android:layout_gravity="center_vertical"-->
-        <!--android:gravity="center_horizontal|center_vertical"-->
-        <!--android:background="@color/waranku"-->
-        <!--&gt;-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_gravity="center_vertical"
+        android:gravity="center_horizontal|center_vertical"
+        android:background="@color/waranku"
+        >
         <!--<Button-->
             <!--android:elevation="16dp"-->
             <!--android:layout_width="200dp"-->
@@ -42,6 +42,6 @@ olahraga mata dulu yok! Coba kamu liat benda sejauh 6 meter "
             <!--android:id="@+id/tombolGua"-->
             <!--/>-->
 
-    <!--</LinearLayout>-->
+    </LinearLayout>
 
 </LinearLayout>
