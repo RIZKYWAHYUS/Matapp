@@ -109,36 +109,36 @@ public class MainActivity_jarak extends AppCompatActivity implements MessageList
     MessageHUB.get().registerListener(this);
     // _audioManager.registerMediaButtonEventReceiver(_headSetButtonReceiver);
 
-    // 1 for front cam. No front cam ? Not my fault!
-    _cam = Camera.open(1);
-    Camera.Parameters param = _cam.getParameters();
-
-    // Find the best suitable camera picture size for your device. Competent
-    // research has shown that a smaller size gets better results up to a
-    // certain point.
-    // http://ieeexplore.ieee.org/xpl/login.jsp?tp=&arnumber=6825217&url=http%3A%2F%2Fieeexplore.ieee.org%2Fiel7%2F6816619%2F6825201%2F06825217.pdf%3Farnumber%3D6825217
-    List<Size> pSize = param.getSupportedPictureSizes();
-    double deviceRatio = (double) this.getResources().getDisplayMetrics().widthPixels
-      / (double) this.getResources().getDisplayMetrics().heightPixels;
-
-    Size bestSize = pSize.get(0);
-    double bestRation = (double) bestSize.width / (double) bestSize.height;
-
-    for (Size size : pSize) {
-      double sizeRatio = (double) size.width / (double) size.height;
-
-      if (Math.abs(deviceRatio - bestRation) > Math.abs(deviceRatio
-        - sizeRatio)) {
-        bestSize = size;
-        bestRation = sizeRatio;
-      }
-    }
-    _cameraHeight = bestSize.height;
-    _cameraWidth = bestSize.width;
-
-    Log.d("PInfo", _cameraWidth + " x " + _cameraHeight);
-
-    param.setPreviewSize(_cameraWidth, _cameraHeight);
+    // 1 for front cam.   No front cam ? Not my fault!
+    _cam = Camera.open(Camera.CameraInfo.CAMERA_FACING_FRONT);
+//    Camera.Parameters param = _cam.getParameters();
+//
+//    // Find the best suitable camera picture size for your device. Competent
+//    // research has shown that a smaller size gets better results up to a
+//    // certain point.
+//    // http://ieeexplore.ieee.org/xpl/login.jsp?tp=&arnumber=6825217&url=http%3A%2F%2Fieeexplore.ieee.org%2Fiel7%2F6816619%2F6825201%2F06825217.pdf%3Farnumber%3D6825217
+//    List<Size> pSize = param.getSupportedPictureSizes();
+//    double deviceRatio = (double) this.getResources().getDisplayMetrics().widthPixels
+//      / (double) this.getResources().getDisplayMetrics().heightPixels;
+//
+//    Size bestSize = pSize.get(0);
+//    double bestRation = (double) bestSize.width / (double) bestSize.height;
+//
+//    for (Size size : pSize) {
+//      double sizeRatio = (double) size.width / (double) size.height;
+//
+//      if (Math.abs(deviceRatio - bestRation) > Math.abs(deviceRatio
+//        - sizeRatio)) {
+//        bestSize = size;
+//        bestRation = sizeRatio;
+//      }
+//    }
+//    _cameraHeight = bestSize.height;
+//    _cameraWidth = bestSize.width;
+//
+//    Log.d("PInfo", _cameraWidth + " x " + _cameraHeight);
+//
+//    param.setPreviewSize(_cameraWidth, _cameraHeight);
 //    _cam.setParameters(param);
 
     _mySurfaceView.setCamera(_cam);

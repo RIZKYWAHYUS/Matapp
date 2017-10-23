@@ -534,7 +534,9 @@ private LineChart mChart;
     public void setTime() {
         time.setText("" + mins + ":" + String.format("%02d", secs) + ":"
                 + String.format("%03d", millis));
-
+        if(secs==20){
+            reset();
+        }
     }
 
     @Override

@@ -28,10 +28,7 @@ public class MyService extends Service {
     String waktu="";
     public MyService() { }
 
-        //keperluan popup
-    AlertDialog.Builder dialog;
-    LayoutInflater inflater;
-    View dialogView;
+
 
     public Runnable updateTimer = new Runnable() {
         public void run() {
@@ -60,29 +57,6 @@ public class MyService extends Service {
 
     }
 
-//
-//    private void DialogForm() {
-//        dialog = new AlertDialog.Builder(Statistika.this);
-//        inflater = getLayoutInflater();
-//        dialogView = inflater.inflate(R.layout.popup_durasi, null);
-//        dialog.setView(dialogView);
-//        dialog.setCancelable(true);
-//        dialog.show();
-//        dialog.setOnDismissListener(new DialogInterface.OnDismissListener() {
-//            @Override
-//            public void onDismiss(DialogInterface dialog) {
-//                Toast.makeText(getApplicationContext(), "percobaan", Toast.LENGTH_SHORT).show();
-//
-//            }
-//        });
-//
-//
-//    }
-//
-//    public void pencet(View v){
-//        Toast.makeText(getApplicationContext(), "percobaan", Toast.LENGTH_SHORT).show();
-//
-//    }
 
 
 
