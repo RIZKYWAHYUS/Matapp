@@ -1,5 +1,7 @@
 package com.example.user.matapp;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.hardware.camera2.CameraDevice;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -13,6 +15,7 @@ import android.hardware.Camera.Size;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
 import android.widget.RelativeLayout;
@@ -31,6 +34,11 @@ public class MainActivity_jarak extends AppCompatActivity implements MessageList
   public static final String CAM_SIZE_HEIGHT = "intent_cam_size_height";
   public static final String AVG_NUM = "intent_avg_num";
   public static final String PROBANT_NAME = "intent_probant_name";
+
+  //keperluan popup
+  AlertDialog.Builder dialog;
+  LayoutInflater inflater;
+  View dialogView;
 
   private CameraSurfaceView _mySurfaceView;
   Camera _cam;
@@ -206,7 +214,25 @@ public class MainActivity_jarak extends AppCompatActivity implements MessageList
 
 
     if(message.getDistToFace()<30f && message.getDistToFace()>0f)
-    Toast.makeText(this, "wooyyy kecedeken", Toast.LENGTH_SHORT).show();
+        DialogForm();
+  }
+
+  private void DialogForm() {
+    dialog = new AlertDialog.Builder(MainActivity_jarak.this);
+    inflater = getLayoutInflater();
+    dialogView = inflater.inflate(R.layout.pupup_jarak, null);
+    dialog.setView(dialogView);
+    dialog.setCancelable(true);
+    dialog.show();
+    dialog.setNeutralButton("Ok", new DialogInterface.OnClickListener() {
+      @Override
+      public void onClick(DialogInterface dialogInterface, int i) {
+        // do something
+      }
+    });
+
+
+
   }
 
   private void resetCam() {

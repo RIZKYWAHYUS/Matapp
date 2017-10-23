@@ -75,7 +75,7 @@ tools:context="com.example.user.matapp.MainActivity_jarak">
     android:layout_height="wrap_content"
     android:layout_gravity="right"
     android:text="@string/showEyePoints"
-    android:checked="true"
+    android:checked="false"
     android:onClick="onShowEyePoints" />
 
 </LinearLayout>

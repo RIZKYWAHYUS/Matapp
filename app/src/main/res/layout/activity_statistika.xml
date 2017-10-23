@@ -18,6 +18,7 @@
         android:titleTextColor="@color/putih"
         app:titleTextColor="@color/putih"
         app:popupTheme="@style/AppTheme.PopupOverlay"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
         android:elevation="16dp"
         />
 
@@ -47,7 +48,8 @@
 
 
                 android:text="00:00:00"
-                android:textSize="50sp" />
+                android:textSize="50sp"
+                android:layout_marginTop="50dp"/>
             <android.support.design.widget.FloatingActionButton
                 android:id="@+id/fab_playPause"
                 android:layout_width="wrap_content"
@@ -57,7 +59,7 @@
                 android:src="@drawable/coins"
 
                 android:layout_below="@+id/timer"
-                android:layout_centerHorizontal="true"
+                android:layout_marginLeft="100dp"
                  android:focusable="false" />
 
 
@@ -70,7 +72,7 @@
                  android:src="@drawable/ic_donation"
                 android:layout_toRightOf="@id/fab_playPause"
                 android:layout_alignTop="@id/fab_playPause"
-                android:layout_marginLeft="10dp"
+                android:layout_marginLeft="30dp"
                 android:layout_toEndOf="@+id/fab_playPause" />
 
 

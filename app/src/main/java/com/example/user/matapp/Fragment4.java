@@ -16,7 +16,7 @@ import android.widget.Switch;
 
 public class Fragment4 extends Fragment implements View.OnClickListener{
 
-    Switch switch1 ;
+    Switch switch1 , switch2;
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -33,6 +33,8 @@ public class Fragment4 extends Fragment implements View.OnClickListener{
         getActivity().setTitle("Menu 4");
         switch1 = (Switch) view.findViewById(R.id.switch1);
         switch1.setOnClickListener(this);
+        switch2 = (Switch) view.findViewById(R.id.switch2);
+        switch2.setOnClickListener(this);
     }
 
 
@@ -41,6 +43,10 @@ public class Fragment4 extends Fragment implements View.OnClickListener{
     public void onClick(View v) {
             if (switch1.isChecked()){
                 Intent in = new Intent(getActivity().getApplicationContext(), MainActivity_jarak.class);
+                startActivity(in);
+            }
+            else if (switch2.isChecked()){
+                Intent in = new Intent(getActivity().getApplicationContext(), Statistika.class);
                 startActivity(in);
             }
     }

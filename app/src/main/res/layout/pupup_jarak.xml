@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    android:background="@android:color/holo_red_dark"
+
+    >
+
+    <ImageView
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:src="@drawable/ic_mata"
+        android:layout_gravity="center"/>
+
+    <!--<LinearLayout-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="80dp"-->
+    <!--android:layout_gravity="center_vertical"-->
+    <!--android:gravity="center_horizontal|center_vertical"-->
+    <!--android:background="@color/waranku"-->
+    <!--&gt;-->
+    <!--<Button-->
+    <!--android:elevation="16dp"-->
+    <!--android:layout_width="200dp"-->
+    <!--android:layout_height="50dp"-->
+    <!--android:textColor="@color/putih"-->
+    <!--android:textSize="25dp"-->
+    <!--android:text="Start"-->
+    <!--android:textAllCaps="false"-->
+    <!--android:background="@color/waranku"-->
+    <!--android:onClick="pencet"-->
+    <!--android:id="@+id/tombolGua"-->
+    <!--/>-->
+
+    <!--</LinearLayout>-->
+
+</LinearLayout>
