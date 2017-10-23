@@ -64,11 +64,11 @@ public class Fragment2 extends Fragment {
 
 
         gambar = new ArrayList<>();
-        gambar.add("sjupiyandi@gmail.com");
-        gambar.add("081233212423");
+        gambar.add(PengendaliAuth.email);
+        gambar.add(PengendaliAuth.noTelp);
         gambar.add("********");
-        gambar.add("Sisco Jupiyandi");
-        gambar.add("sjupiyandi");
+        gambar.add("Belum Terkoneksi");
+        gambar.add("Belum Terkoneksi");
 
         RecyclerView.Adapter adapter = new AdapterAkun(countries, gambar);
         recyclerView.setAdapter(adapter);
@@ -87,7 +87,6 @@ public class Fragment2 extends Fragment {
                 View child = rv.findChildViewUnder(e.getX(), e.getY());
                 if(child != null && gestureDetector.onTouchEvent(e)) {
                     int position = rv.getChildAdapterPosition(child);
-                    mulaiSubMenu(position);
 
                 }
 
@@ -109,37 +108,7 @@ public class Fragment2 extends Fragment {
 
 
 
-    public void mulaiSubMenu(int position){
-        Intent intent;
-        switch (position) {
-            case 0:
-                intent = new Intent(getActivity().getApplicationContext(), ProfileAsli.class);
-                startActivity(intent);
-                break;
-            case 1:
-                intent = new Intent(getActivity().getApplicationContext(), LeaderboardAsli.class);
-                startActivity(intent);
-                break;
-            case 2:
-                intent = new Intent(getActivity().getApplicationContext(), tesKetajaman.class);
-                startActivity(intent);
-                break;
-            case 3 :
-                Toast.makeText(getActivity().getApplicationContext(), (CharSequence) countries.get(position), Toast.LENGTH_SHORT).show();
-                break;
-            case 4 :
-                Toast.makeText(getActivity().getApplicationContext(), (CharSequence) countries.get(position), Toast.LENGTH_SHORT).show();
-                break;
-            case 5:
-                Toast.makeText(getActivity().getApplicationContext(), (CharSequence) countries.get(position), Toast.LENGTH_SHORT).show();
-                break;
-            case 6:
-                Toast.makeText(getActivity().getApplicationContext(), (CharSequence) countries.get(position), Toast.LENGTH_SHORT).show();
-                break;
-            default:
-                Toast.makeText(getActivity().getApplicationContext(), (CharSequence) countries.get(position), Toast.LENGTH_SHORT).show();
-                break;
-        }
+
 
 
 
@@ -151,6 +120,3 @@ public class Fragment2 extends Fragment {
 
 
 
-
-
-}

@@ -3,8 +3,10 @@ package com.example.user.matapp;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
+import android.util.Log;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -20,6 +22,14 @@ import android.widget.SimpleAdapter;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -28,7 +38,12 @@ import java.util.logging.LogRecord;
 
 public class Main2Activity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
+    private static final String TAG = "di Main2Activity";
     String nama = "Matappers";
+
+    private DatabaseReference mFirebaseDatabase;
+    private FirebaseDatabase mFirebaseInstance;
+    String namaLu = "", emailLu="";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,6 +51,9 @@ public class Main2Activity extends AppCompatActivity
         setContentView(R.layout.activity_main2);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+
+
 
 
 
@@ -50,15 +68,18 @@ public class Main2Activity extends AppCompatActivity
         TextView navUsername = (TextView) headerView.findViewById(R.id.Namadidrawer);
         TextView navEmail = (TextView) headerView.findViewById(R.id.Emaildidrawer);
 
-        Intent i = getIntent();
-        Bundle b = i.getExtras();
-        if(b!=null){
-            nama = (String) b.get("namaUser");
-            if(!nama.trim().equalsIgnoreCase("")){
-                navUsername.setText(nama);
-                navEmail.setText(nama.toLowerCase().trim()+"@mail.com");
-            }
-        }
+        navUsername.setText(PengendaliAuth.nama);
+        navEmail.setText(PengendaliAuth.email);
+
+//        Intent i = getIntent();
+//        Bundle b = i.getExtras();
+//        if(b!=null){
+//            nama = (String) b.get("namaUser");
+//            if(!nama.trim().equalsIgnoreCase("")){
+//                navUsername.setText(nama);
+//                navEmail.setText(nama.toLowerCase().trim()+"@mail.com");
+//            }
+//        }
 
         navigationView.setNavigationItemSelectedListener(this);
 
@@ -144,6 +165,35 @@ public class Main2Activity extends AppCompatActivity
 
 
 
+    private void addUserChangeListener() {
+        // User data change listener
+        mFirebaseDatabase.child(PengendaliAuth.userId).addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                User user = dataSnapshot.getValue(User.class);
+
+                // Check for null
+                if (user == null) {
+                    Log.e(TAG, "User data is null!");
+                    return;
+                }
+
+                namaLu = user.nama;
+                emailLu = user.email;
+
+
+
+
+
+            }
+
+            @Override
+            public void onCancelled(DatabaseError error) {
+                // Failed to read value
+                Log.e(TAG, "Failed to read user", error.toException());
+            }
+        });
+    }
 
 
 
